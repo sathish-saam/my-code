@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="mail.client_action">
+        <div class="o_mail_chat">
+            <div class="o_mail_chat_sidebar" />
+            <div class="o_mail_chat_content">
+                <t t-if="widget.notification_bar">
+                    <div class="o_mail_annoying_notification_bar">
+                        <span class="o_mail_request_permission">SHC Portal needs your permission to <a href="#"> enable desktop notifications</a>.</span>
+                        <span class="fa fa-close"></span>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <!-- <t t-name="mail.chat.Sidebar">
+        <div class="o_mail_chat_sidebar">
+            <div
+	t-attf-class="o_mail_chat_channel_item #{(active_channel_id == 'channel_inbox') ? 'o_active': ''}"
+	data-channel-id="channel_inbox">
+                @ Inbox
+                <t t-set="counter" t-value="needaction_counter" />
+                <t t-call="mail.chat.SidebarNeedaction" />
+            </div>
+            <div
+	t-attf-class="o_mail_chat_channel_item #{(active_channel_id == 'channel_starred') ? 'o_active': ''}"
+	data-channel-id="channel_starred">
+                <span class="fa fa-star-o" /> Starred
+            </div>
+
+        </div>
+    </t> -->
+    
+</templates>
