@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+<record id="menu_birthday" model="website.menu">
+         <field name="name">Birthday</field>
+         <field name="url">/page/birthday</field>
+         <field name="parent_id" ref="website.main_menu"/>
+         <field name="sequence" type="int">51</field>
+         <field name="website_id" ref="website.default_website"/>
+     </record>
+     
+</data>
+</odoo>

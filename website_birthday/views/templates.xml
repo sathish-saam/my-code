@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="birthday" name="Birthday">
+			<t t-call="website.layout">
+				<style>
+h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+h2 {
+  font-size:1em; 
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+	  font-weight: bold;
+	  font-size: 1em;
+  text-align: center;
+  color: white;
+}
+
+.container td {
+	  border-bottom:1px solid white;
+	  font-weight: normal;
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	  text-align: left;
+	  overflow: hidden;
+	  width: 80%;
+	  margin: 0 auto;
+  display: table;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+
+  padding-left:2%; 
+text-align: center; 
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color: #8E9689;
+}
+
+.container th {
+	  background-color: #2980b9;
+}
+
+.container td:first-child { color: #FB667A; }
+
+.container tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10 !important;
+  font-weight: bold;
+  
+-ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+.img_class{
+position: absolute;
+width: 111px;
+height: 104px;
+border-radius:50%;
+top: 55px;
+left: 67px;
+-webkit-transform: rotate(22deg);
+-moz-transform: rotate(22deg);
+-o-transform: rotate(22deg);
+-ms-transform: rotate(22deg);
+transform: rotate(22deg);
+}
+.banner_img{
+position: absolute;
+top: 50px;
+left: 449px;
+}
+</style>
+				<div id="wrap" style="background-color:white">
+					<div class="oe_structure" />
+					<h1>Happy Birthday</h1>
+					<img class="img_class" src="/website_birthday/static/src/img/birthday.gif"></img>
+					 <img class="banner_img" src="/website_birthday/static/src/img/banner.png"></img>
+					<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Image</h1></th>
+			<th><h1>Name</h1></th>
+			<th><h1>Job</h1></th>
+			<th><h1>Department</h1></th>
+		</tr>
+	</thead>
+<t t-foreach="dob_list or []" t-as="dob">
+<tbody>
+		<tr>
+			<td style="color:white"><img itemprop="image" class="img img-responsive" style="display: inline-block;width: 37px;" t-att-src="'data:image/png;base64,' + dob.image"></img></td>
+			<td style="color:white"><span t-field="dob.name" style="font-size: 13px;"/></td>
+			<td style="color:white"><span style="font-weight:bold;font-size:13px" t-field="dob.job_id.name"/></td>
+			<td style="color:white"><span style="font-weight:bold;font-size:13px" t-field="dob.department_id.name"/></td>
+		</tr>
+	</tbody>
+</t>
+</table>
+				</div>
+			</t>
+		</template>
+	</data>
+</odoo>

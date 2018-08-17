@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<!--<template id="website_inherited" name="web_ass_inherit"
+			inherit_id="website.assets_frontend">
+			<xpath expr="." position="inside">
+				<link rel="stylesheet"
+					href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+				<link rel="stylesheet" href="/shc_website/static/src/css/style.css" />
+				<link rel="stylesheet" href="/shc_website/static/src/css/styles.css" />
+				<link rel="stylesheet" href="/shc_published_paper/static/src/css/image.css" />
+				<link rel="stylesheet" href="/shc_website/static/src/css/base.css" 
+					/>
+			</xpath>
+		</template>-->
+
+		<!--<template id="clean_script" inherit_id="website.assets_frontend"
+			name="Clean scripts">
+			<xpath expr="/t" position="inside">
+				<script type="text/javascript" src="/shc_website/static/src/js/custom.js" />
+			</xpath>
+		</template>-->
+
+		<template id="birthday" name="Birthday">
+			<t t-call="website.layout">
+				<div id="wrap" style="background-color:white">
+					<div class="oe_structure" />
+						<h1>Happy Birthday</h1>
+					</a>
+				</div>

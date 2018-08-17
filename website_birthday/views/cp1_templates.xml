@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="birthday" name="Birthday">
+			<t t-call="website.layout">
+				<div id="wrap" style="background-color:white">
+					<div class="oe_structure" />
+						<h1>Happy Birthday</h1>
+<t t-foreach="dob_list or []" t-as="dob">
+					<table style="border-collapse: collapse; width: 100%;">
+						
+<tr>
+                                                        <th style="border: 1px solid #dddddd;text-align: left;padding: 8px;font-weight:bold;">Img</th>
+<td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">
+ <img itemprop="image" class="img img-responsive" style="display: inline-block;" t-att-src="'data:image/png;base64,' + dob.image"></img>
+</td>
+</tr>
+<tr>
+							<th style="border: 1px solid #dddddd;text-align: left;padding: 8px;font-weight:bold;">Name</th>
+<td style="border: 1px solid #dddddd;text-align: left;padding: 8px;"><span t-field="dob.name" style="font-size: 13px;"/></td>
+</tr>
+<tr>
+<th style="border: 1px solid #dddddd;text-align: left;padding: 8px;font-weight:bold;">Designation</th>
+<td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">
+<span style="font-weight:bold;font-size:13px" t-field="dob.job_id.name"/></td></tr>
+<tr>
+<th style="border: 1px solid #dddddd;text-align: left;padding: 8px;font-weight:bold;">Department</th>
+<td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">
+<span t-esc="dob.department_id.name" style="font-size: 13px;"/></td></tr></table>
+</t>
+				</div>
+			</t>
+		</template>
+	</data>
+</odoo>
